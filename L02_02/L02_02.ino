@@ -47,14 +47,9 @@ void turnOnOneAndOffOthers(int led_inx) {
   digitalWrite(led[next], LOW);
 }
 
-void blinkRed()
-{   
-    int led_inx = 0;
-    const unsigned long BlinkChangePeriod = debounce[led_inx];
-    static int ledState = LOW;
-    static unsigned long lastBlinkChange = 0UL;
-
-    if (millis() - lastBlinkChange >= BlinkChangePeriod)
+void blinkTemplate(int& led_inx, int& ledState, unsigned long& lastBlinkChange) {
+  const unsigned long BlinkChangePeriod = debounce[led_inx];
+  if (millis() - lastBlinkChange >= BlinkChangePeriod)
     {
         if (ledState == HIGH)
         {
@@ -68,54 +63,31 @@ void blinkRed()
         }
         lastBlinkChange += BlinkChangePeriod;
     }
+}
+
+void blinkRed()
+{   
+    int led_inx = 0;
+    static int ledState = LOW;
+    static unsigned long lastBlinkChange = 0UL;
+    blinkTemplate(led_inx, ledState, lastBlinkChange);
 }
 
 void blinkGreen()
 {   
     int led_inx = 1;
-    const unsigned long BlinkChangePeriod = debounce[led_inx];
     static int ledState = LOW;
     static unsigned long lastBlinkChange = 0UL;
-
-    if (millis() - lastBlinkChange >= BlinkChangePeriod)
-    {
-        if (ledState == HIGH)
-        {
-            ledState = LOW;
-            digitalWrite(led[led_inx], LOW);
-        }
-        else
-        {
-            ledState = HIGH;
-            turnOnOneAndOffOthers(led_inx);
-        }
-        lastBlinkChange += BlinkChangePeriod;
-    }
+    blinkTemplate(led_inx, ledState, lastBlinkChange);
 }
 
 void blinkBlue()
 {   
     int led_inx = 2;
-    const unsigned long BlinkChangePeriod = debounce[led_inx];
     static int ledState = LOW;
     static unsigned long lastBlinkChange = 0UL;
-
-    if (millis() - lastBlinkChange >= BlinkChangePeriod)
-    {
-        if (ledState == HIGH)
-        {
-            ledState = LOW;
-            digitalWrite(led[led_inx], LOW);
-        }
-        else
-        {
-            ledState = HIGH;
-            turnOnOneAndOffOthers(led_inx);
-        }
-        lastBlinkChange += BlinkChangePeriod;
-    }
+    blinkTemplate(led_inx, ledState, lastBlinkChange);
 }
-
 
 void loop() {
   blinkRed();
