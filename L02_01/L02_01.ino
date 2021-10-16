@@ -34,165 +34,58 @@ void initButtons()
 
 #define DEBOUNCE_PERIOD 10UL
 
-bool isButtonPressed(int button)
+bool isButtonPressedTemplate(int button, int& debounced_button_state, 
+int& previous_reading, unsigned long& last_change_time)
 {
+    bool isPressed = false;
+
+    int current_reading = digitalRead(button);
+
+    if (previous_reading != current_reading)
+    {
+        last_change_time = millis();
+    }
+
+    if (millis() - last_change_time > DEBOUNCE_PERIOD)
+    {
+        if (current_reading != debounced_button_state)
+        {
+            if (debounced_button_state == HIGH && current_reading == LOW)
+            {
+                isPressed = true;
+            }
+            debounced_button_state = current_reading;
+        }
+    }
+
+    previous_reading = current_reading;
+
+    return isPressed;
+}
+
+
+bool isGreenButtonPressed() {
     static int debounced_button_state = HIGH;
     static int previous_reading = HIGH;
     static unsigned long last_change_time = 0UL;
-    bool isPressed = false;
-
-    int current_reading = digitalRead(button);
-
-    if (previous_reading != current_reading)
-    {
-        last_change_time = millis();
-    }
-
-    if (millis() - last_change_time > DEBOUNCE_PERIOD)
-    {
-        if (current_reading != debounced_button_state)
-        {
-            if (debounced_button_state == HIGH && current_reading == LOW)
-            {
-                isPressed = true;
-            }
-            debounced_button_state = current_reading;
-        }
-    }
-
-    previous_reading = current_reading;
-
-    return isPressed;
-}
-
-bool isButtonReliesed(int button)
-{
-    static int debounced_button_state = LOW;
-    static int previous_reading = LOW;
-    static unsigned long last_change_time = 0UL;
-    bool isReliesed = false;
-
-    int current_reading = digitalRead(button);
-
-    if (previous_reading != current_reading)
-    {
-        last_change_time = millis();
-    }
-
-    if (millis() - last_change_time > DEBOUNCE_PERIOD)
-    {
-        if (current_reading != debounced_button_state)
-        {
-            if (debounced_button_state == LOW && current_reading == HIGH)
-            {
-                isReliesed = true;
-            }
-            debounced_button_state = current_reading;
-        }
-    }
-
-    previous_reading = current_reading;
-
-    return isReliesed;
-}
-
-bool isGreenButtonPressed() {
-  static int debounced_button_state = HIGH;
-    static int previous_reading = HIGH;
-    static unsigned long last_change_time = 0UL;
-    bool isPressed = false;
-
-    int current_reading = digitalRead(GREEN_BUTTON);
-
-    if (previous_reading != current_reading)
-    {
-        last_change_time = millis();
-    }
-
-    if (millis() - last_change_time > DEBOUNCE_PERIOD)
-    {
-        if (current_reading != debounced_button_state)
-        {
-            if (debounced_button_state == HIGH && current_reading == LOW)
-            {
-                isPressed = true;
-            }
-            debounced_button_state = current_reading;
-        }
-    }
-
-    previous_reading = current_reading;
-
-    return isPressed;
-}
-
-bool isGreenButtonReliesed() {
-  static int debounced_button_state = LOW;
-    static int previous_reading = LOW;
-    static unsigned long last_change_time = 0UL;
-    bool isReliesed = false;
-
-    int current_reading = digitalRead(GREEN_BUTTON);
-
-    if (previous_reading != current_reading)
-    {
-        last_change_time = millis();
-    }
-
-    if (millis() - last_change_time > DEBOUNCE_PERIOD)
-    {
-        if (current_reading != debounced_button_state)
-        {
-            if (debounced_button_state == LOW && current_reading == HIGH)
-            {
-                isReliesed = true;
-            }
-            debounced_button_state = current_reading;
-        }
-    }
-
-    previous_reading = current_reading;
-
-    return isReliesed;
+    return isButtonPressedTemplate(GREEN_BUTTON, debounced_button_state, 
+    previous_reading, last_change_time);
 }
 
 bool isRedButtonPressed() {
-  static int debounced_button_state = HIGH;
+    static int debounced_button_state = HIGH;
     static int previous_reading = HIGH;
     static unsigned long last_change_time = 0UL;
-    bool isPressed = false;
-
-    int current_reading = digitalRead(RED_BUTTON);
-
-    if (previous_reading != current_reading)
-    {
-        last_change_time = millis();
-    }
-
-    if (millis() - last_change_time > DEBOUNCE_PERIOD)
-    {
-        if (current_reading != debounced_button_state)
-        {
-            if (debounced_button_state == HIGH && current_reading == LOW)
-            {
-                isPressed = true;
-            }
-            debounced_button_state = current_reading;
-        }
-    }
-
-    previous_reading = current_reading;
-
-    return isPressed;
+    return isButtonPressedTemplate(RED_BUTTON, debounced_button_state, 
+    previous_reading, last_change_time);
 }
 
-bool isRedButtonReliesed() {
-  static int debounced_button_state = LOW;
-    static int previous_reading = LOW;
-    static unsigned long last_change_time = 0UL;
+bool isButtonReliesedTemplate(int button, int& debounced_button_state, 
+int& previous_reading, unsigned long& last_change_time)
+{
     bool isReliesed = false;
 
-    int current_reading = digitalRead(RED_BUTTON);
+    int current_reading = digitalRead(button);
 
     if (previous_reading != current_reading)
     {
@@ -216,55 +109,62 @@ bool isRedButtonReliesed() {
     return isReliesed;
 }
 
-bool prev_green = false;
-bool prev_red = false;
+
+bool isGreenButtonReliesed() {
+    static int debounced_button_state = LOW;
+    static int previous_reading = LOW;
+    static unsigned long last_change_time = 0UL;
+    return isButtonReliesedTemplate(GREEN_BUTTON, debounced_button_state, 
+    previous_reading, last_change_time);
+}
+
+bool isRedButtonReliesed() {
+    static int debounced_button_state = LOW;
+    static int previous_reading = LOW;
+    static unsigned long last_change_time = 0UL;
+    return isButtonReliesedTemplate(RED_BUTTON, debounced_button_state, 
+    previous_reading, last_change_time);
+}
 
 bool wasGreenPressedAndReliesed() {
-  if (isGreenButtonPressed()) {
-    prev_green = true;
-  }
-  if (prev_green & isGreenButtonReliesed()) {
-    prev_green = false;
-    return true;
-  }
-  return false;
+    static bool prev_green = false;
+    if (isGreenButtonPressed()) {
+        prev_green = true;
+    }
+    if (prev_green & isGreenButtonReliesed()) {
+        prev_green = false;
+        return true;
+    }
+    return false;
 }
 
 bool wasRedPressedAndReliesed() {
-  if (isRedButtonPressed()) {
-    prev_red = true;
-  }
-  if (prev_red & isRedButtonReliesed()) {
-    prev_red = false;
-    return true;
-  }
-  return false;
+    static bool prev_red = false;
+    if (isRedButtonPressed()) {
+        prev_red = true;
+    }
+    if (prev_red & isRedButtonReliesed()) {
+        prev_red = false;
+        return true;
+    }
+    return false;
 }
 
-int led_index = 0;
-
-void onNextColor() {
-  digitalWrite(led[led_index], LOW);
-  led_index = ++led_index % 3;
-  digitalWrite(led[led_index], HIGH);
-}
-
-void setup()
-{
-    initRGB();
-    initButtons();
+void turnOnNextColor() {
+    static int led_index = 0;
+    digitalWrite(led[led_index], LOW);
+    led_index = ++led_index % 3;
     digitalWrite(led[led_index], HIGH);
 }
 
-void loop()
-{
-    // działają osobno ale nie razem
-    if (wasGreenPressedAndReliesed())
-    {
-        onNextColor();
-    }
-    if (wasRedPressedAndReliesed())
-    {
-        onNextColor();
+void setup() {
+    initRGB();
+    initButtons();
+    digitalWrite(led[0], HIGH);
+}
+
+void loop() {
+    if (wasGreenPressedAndReliesed() || wasRedPressedAndReliesed()) {
+        turnOnNextColor();
     }
 }
