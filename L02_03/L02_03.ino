@@ -12,6 +12,8 @@ LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
 #define GREEN_BUTTON A1
 #define DEBOUNCE_PERIOD 1000UL
 
+LiquidCrystal_I2C lcd(0x27,16,2);
+
 unsigned long last_time_break = 0UL;
 unsigned long previous_time_sum = 0UL;
 bool isTimerRunning = false;
@@ -22,12 +24,12 @@ void initButtons()
     pinMode(GREEN_BUTTON, INPUT_PULLUP);
 }
 
-// void initLCD()
-// {
-//   lcd.init();
-//   lcd.clear();
-//   lcd.backlight();
-// }
+void initLCD()
+{
+  lcd.init();
+  lcd.clear();
+  lcd.backlight();
+}
 
 bool isButtonPressedTemplate(int button, int& debounced_button_state, 
 int& previous_reading, unsigned long& last_change_time)
@@ -124,7 +126,7 @@ bool isRedButtonReliesed() {
 
 void setup() {
     initButtons();
-    // initLCD();
+    initLCD();
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print("Ready");
