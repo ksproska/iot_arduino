@@ -141,7 +141,15 @@ void displayValue(unsigned long current_time) {
   if (last_displayed != current_time) {
     lcd.clear();
     lcd.setCursor(0,0);
-    lcd.print(current_time/1000);
+    int secs = current_time/1000;
+    int mins = secs/60;
+    secs = secs - 60*mins;
+    lcd.print(mins);
+    lcd.print(":");
+    if (secs < 10) {
+      lcd.print(0);
+    }
+    lcd.print(secs);
     last_displayed = current_time;
   }
   
