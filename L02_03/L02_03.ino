@@ -8,9 +8,10 @@
 #include <LiquidCrystal_I2C.h>
 LiquidCrystal_I2C lcd(0x27,16,2);
 
-#define RED_BUTTON A0
-#define GREEN_BUTTON A1
-#define DEBOUNCE_PERIOD 1000UL
+#define RED_BUTTON 2
+#define GREEN_BUTTON 4
+#define DEBOUNCE_BUTTON 10UL
+#define DEBOUNCE_DISPLAY 1000UL
 
 unsigned long last_time_break = 0UL;
 unsigned long previous_time_sum = 0UL;
@@ -41,7 +42,7 @@ int& previous_reading, unsigned long& last_change_time)
         last_change_time = millis();
     }
 
-    if (millis() - last_change_time > DEBOUNCE_PERIOD)
+    if (millis() - last_change_time > DEBOUNCE_BUTTON)
     {
         if (current_reading != debounced_button_state)
         {
@@ -87,7 +88,7 @@ int& previous_reading, unsigned long& last_change_time)
         last_change_time = millis();
     }
 
-    if (millis() - last_change_time > DEBOUNCE_PERIOD)
+    if (millis() - last_change_time > DEBOUNCE_BUTTON)
     {
         if (current_reading != debounced_button_state)
         {
@@ -157,7 +158,7 @@ void displayValue(unsigned long current_time) {
 
 void displayUpdatedTime() {
   static unsigned long temp_measurement = 0UL;
-  if (millis() - temp_measurement > DEBOUNCE_PERIOD) {
+  if (millis() - temp_measurement > DEBOUNCE_DISPLAY) {
     temp_measurement = millis();
     if (isTimerRunning) {
       displayValue(millis() - last_time_break + previous_time_sum);
