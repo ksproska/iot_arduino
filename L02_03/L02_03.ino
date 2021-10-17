@@ -5,14 +5,12 @@
 // to 1 sekunda.
 
 // na rzecz symulatora:
-#include <LiquidCrystal.h>
-LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+#include <LiquidCrystal_I2C.h>
+LiquidCrystal_I2C lcd(0x27,16,2);
 
 #define RED_BUTTON A0
 #define GREEN_BUTTON A1
 #define DEBOUNCE_PERIOD 1000UL
-
-LiquidCrystal_I2C lcd(0x27,16,2);
 
 unsigned long last_time_break = 0UL;
 unsigned long previous_time_sum = 0UL;
