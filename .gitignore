@@ -63,3 +63,7 @@ build/core/wiring_analog.c.d
 build/core/wiring_analog.c.o
 build/core/HardwareSerial0.cpp.o
 build/core/HardwareSerial1.cpp.d
+.vs/ProjectSettings.json
+.vs/slnx.sqlite
+.vs/VSWorkspaceState.json
+.vs/moje prace/v16/.suo
