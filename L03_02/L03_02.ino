@@ -17,12 +17,6 @@ void initRGB() {
     digitalWrite(LED_BLUE, LOW);
 }
 
-void set_colors(int i_r, int i_g, int i_b) {
-    analogWrite(LED_RED, i_r);
-    analogWrite(LED_GREEN, i_g);
-    analogWrite(LED_BLUE, i_b);
-}
-
 void initSerial() {
     Serial.begin(9600);
     while (!Serial) {}
