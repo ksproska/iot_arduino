@@ -12,10 +12,14 @@ void initButtons()
     pinMode(GREEN_BUTTON, INPUT_PULLUP);
 }
 
-void setup() {
-    initButtons();
+void initSerial() {
     Serial.begin(9600);
     while (!Serial) {}
+}
+
+void setup() {
+    initButtons();
+    initSerial();
 }
 
 
