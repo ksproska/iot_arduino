@@ -100,7 +100,13 @@ void loop()
             {
               rgb[i] = false;
               int val = String(str).toInt();
-              analogWrite(led[i], val);
+              if(val < 0 || val > 255) {
+                analogWrite(led[i], val);
+              }
+              else
+              {
+                Serial.println("Illegal value " + str);
+              }
             }
           }
         }

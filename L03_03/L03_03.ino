@@ -16,7 +16,7 @@ void setup()
     initLCD();
 }
 
-void displayInt(int int_val) {
+void displayAuto(auto int_val) {
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(int_val);
@@ -26,8 +26,9 @@ int value = -1;
 void loop()
 {
     int value_new = analogRead(POTENTIOMETER);
+    value_new = map(value, 0, 1023, 0, 5);
     if(value != value_new) {
       value = value_new;
-      displayInt(value);
+      displayAuto(value);
     }
 }
