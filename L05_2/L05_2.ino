@@ -27,7 +27,6 @@ LiquidCrystal_I2C lcd(0x27, 16, 2);
 //________________________________________________________________________________________________
 String tsMenuOptions[] = {"Blink bultin", "Blink RGB", "Blink RGB smooth"};
 int iMenusLen = 3;
-void (*(fun[3]))() = {blinkBuiltinLed, blinkRGB, blinkRGBSmooth};
 
 int iCurrentInt = 0;
 int iPrevInt = -1;
@@ -193,6 +192,7 @@ void setup() {
     attachInterrupt(digitalPinToInterrupt(RED_BUTTON), interruptAction, FALLING);
 }
 
+void (*(fun[3]))() = {blinkBuiltinLed, blinkRGB, blinkRGBSmooth};
 void loop() {   
     // handles encoder - uncoment later
     // int en1;
