@@ -194,17 +194,17 @@ void setup() {
 }
 
 void loop() {   
-    // handles encoder
-    int en1;
-    int en2;
-    unsigned long timestamp;
+    // handles encoder - uncoment later
+    // int en1;
+    // int en2;
+    // unsigned long timestamp;
 
-    ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
-    {
-        en1 = encoder1;
-        en2 = encoder2;
-        timestamp = encoderTimestamp;
-    }
+    // ATOMIC_BLOCK(ATOMIC_RESTORESTATE)
+    // {
+    //     en1 = encoder1;
+    //     en2 = encoder2;
+    //     timestamp = encoderTimestamp;
+    // }
 
     // temp part of code for tests
     if ( Serial.available()) {
