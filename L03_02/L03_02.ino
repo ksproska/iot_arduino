@@ -4,7 +4,7 @@
 #define LED_RED 6
 #define LED_GREEN 5
 #define LED_BLUE 3
-int led[] = {LED_RED, LED_GREEN, LED_BLUE};
+int led[] = {LED_RED, LED_GREEN, LED_BLUE, LED_BUILTIN};
 
 void initRGB() {
     pinMode(LED_RED, OUTPUT);
@@ -15,6 +15,9 @@ void initRGB() {
 
     pinMode(LED_BLUE, OUTPUT);
     digitalWrite(LED_BLUE, LOW);
+
+    pinMode(LED_BUILTIN, OUTPUT);
+    digitalWrite(LED_BUILTIN, LOW);
 }
 
 void initSerial() {
@@ -79,12 +82,12 @@ void loop()
     input.toCharArray(buf, sizeof(buf));
     char *p = buf;
     char *str;
-    String rgb_names[] = {"r", "g", "b"};
-    bool rgb[] = {false, false, false};
+    String rgb_names[] = {"r", "g", "b", "d"};
+    bool rgb[] = {false, false, false, false};
     
     while ((str = strtok_r(p, spliter, &p)) != NULL)
     {
-      for(int i=0; i<3; i++)
+      for(int i=0; i<4; i++)
       {
         if(rgb_names[i] == str)
         {
@@ -94,18 +97,17 @@ void loop()
 
       if(isValidNumber(str))
         {
-          for(int i=0; i<3; i++)
+          for(int i=0; i<4; i++)
           {
             if(rgb[i])
             {
               rgb[i] = false;
               int val = String(str).toInt();
-              if(val < 0 || val > 255) {
-                analogWrite(led[i], val);
+              if(rgb_names[i] == "d") {
+                digitalWrite(led[i], val);
               }
-              else
-              {
-                Serial.println("Illegal value " + str);
+              else {
+                analogWrite(led[i], val);
               }
             }
           }

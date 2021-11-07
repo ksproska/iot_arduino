@@ -16,19 +16,25 @@ void setup()
     initLCD();
 }
 
-void displayAuto(auto int_val) {
+void displayAuto(String int_val, String other) {
     lcd.clear();
     lcd.setCursor(0,0);
     lcd.print(int_val);
+    lcd.setCursor(0,1);
+    lcd.print(other);
 }
 
 int value = -1;
 void loop()
 {
     int value_new = analogRead(POTENTIOMETER);
-    value_new = map(value, 0, 1023, 0, 5);
+    int other = value_new;
+    value_new = map(value_new, 0, 1023, 0, 500);
     if(value != value_new) {
       value = value_new;
-      displayAuto(value);
+      double temp = value;
+      temp = temp/100;
+      displayAuto(String(temp), String(other));
     }
+    delay(100);
 }
