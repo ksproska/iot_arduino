@@ -5,6 +5,7 @@
 // pozycji menu odbywa się za pomocą przycisku. Minimalna funkcjonalność to zapalanie i 
 // gaszenie wybranej diody. Można też zaimplementować ustawianie jasności każdego kolory 
 // diody enkoderem. Warto też program oprzeć na przerwaniach zgłaszanych przy zmianie stanu enkodera.
+// https://www.tinkercad.com/things/fqYY1xuFsqi-52/editel
 
 #include <util/atomic.h>
 #include <LiquidCrystal_I2C.h>
