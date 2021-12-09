@@ -1,4 +1,4 @@
-# internet_rzeczy_arduino
+# Podstawy Internetu Rzeczy - Arduino
 
 ## L01
 
