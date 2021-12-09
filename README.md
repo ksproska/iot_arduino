@@ -42,11 +42,35 @@ i zatrzymuje stoper. Klawisz czerwony zatrzymuje stoper jeśli działał, i rese
 to 1 sekunda.
 Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
-## L03
+## L04
 
-### Zad 1
+### Zad 1 - Wysyłanie danych do komputera PC przez łącze szeregowe
 
-### Zad 2
+Napisz program, który będzie wysyłał informację o stanie przycisków czerwonego i zielonego przez łącze szeregowe do kom-
+putera PC. Sprawdź jaką maksymalną szybkość transmisji danych możesz skonﬁgurować. Spróbuj zwizualizować stany przy-
+cisków na wykresie w Serial Plotter
+Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
+
+### Zad 2 - Sterowanie pracą Arduino za pomocą komend wysyłanych przez łącze szeregowe z PC
+
+Napisz program, który będzie reagował na komendy wysyłane z narzędzia Serial Monitor do zestawu Arduino. Program
+powinien zapalać wszystkie diody LED z zadaną każdej osobno jasnością w reakcji na komendę. Postać komendy ustal
+samodzielnie.
+Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
+
+### Zad 3 - Odczyt wartości napięcia zadanego potencjometrem
+
+Napisz program, który dla napięcia zadanego potencjometrem, na wyświetlaczu LCD wyświetli wartość, którą odczytał ADC
+i rzeczywistą wartość napięcia zadanego potencjometrem. Sprawdź, czy wartości ustawiane potencjometrem osiągają skrajne
+wartości odczytu (0 i 1023) i czy są one stabilne. Skonsultuj się z innymi uczestnikami laboratorium, jak to wyglądało w ich
+przypadku.
+Proszę wykonać dokładnie to zadanie i nie zmieniać go.
+
+### Zad 4 - Monitorowanie napięcia wejściowego portu za pomocą narzędzia Serial Plotter z Arduino IDE
+
+Napisz program, który odczytuje wartość z przetwornika analogowo-cyfrowego, a następnie wysyła przez łącze szeregowe do
+komputera. Zobacz wynik jego działania przy pomocy narzędzi Serial Monitor i Serial Plotter z Arduino IDE.
+Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
 ## L05
 
