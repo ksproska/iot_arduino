@@ -44,21 +44,21 @@ Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić tre�
 
 ## L04
 
-### Zad 1 - Wysyłanie danych do komputera PC przez łącze szeregowe
+### [Zad 1](L03_01/L03_01.ino) - Wysyłanie danych do komputera PC przez łącze szeregowe
 
 Napisz program, który będzie wysyłał informację o stanie przycisków czerwonego i zielonego przez łącze szeregowe do kom-
 putera PC. Sprawdź jaką maksymalną szybkość transmisji danych możesz skonﬁgurować. Spróbuj zwizualizować stany przy-
 cisków na wykresie w Serial Plotter
 Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
-### Zad 2 - Sterowanie pracą Arduino za pomocą komend wysyłanych przez łącze szeregowe z PC
+### [Zad 2](L03_02/L03_02.ino) - Sterowanie pracą Arduino za pomocą komend wysyłanych przez łącze szeregowe z PC
 
 Napisz program, który będzie reagował na komendy wysyłane z narzędzia Serial Monitor do zestawu Arduino. Program
 powinien zapalać wszystkie diody LED z zadaną każdej osobno jasnością w reakcji na komendę. Postać komendy ustal
 samodzielnie.
 Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
-### Zad 3 - Odczyt wartości napięcia zadanego potencjometrem
+### [Zad 3](L03_03/L03_03.ino) - Odczyt wartości napięcia zadanego potencjometrem
 
 Napisz program, który dla napięcia zadanego potencjometrem, na wyświetlaczu LCD wyświetli wartość, którą odczytał ADC
 i rzeczywistą wartość napięcia zadanego potencjometrem. Sprawdź, czy wartości ustawiane potencjometrem osiągają skrajne
@@ -66,7 +66,7 @@ wartości odczytu (0 i 1023) i czy są one stabilne. Skonsultuj się z innymi uc
 przypadku.
 Proszę wykonać dokładnie to zadanie i nie zmieniać go.
 
-### Zad 4 - Monitorowanie napięcia wejściowego portu za pomocą narzędzia Serial Plotter z Arduino IDE
+### [Zad 4](L03_04/L03_04.ino) - Monitorowanie napięcia wejściowego portu za pomocą narzędzia Serial Plotter z Arduino IDE
 
 Napisz program, który odczytuje wartość z przetwornika analogowo-cyfrowego, a następnie wysyła przez łącze szeregowe do
 komputera. Zobacz wynik jego działania przy pomocy narzędzi Serial Monitor i Serial Plotter z Arduino IDE.
@@ -74,7 +74,7 @@ Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić tre�
 
 ## L05
 
-### Zad 1 - Sterowanie programem przy pomocy enkodera
+### [Zad 1](L05_02/L05_02.ino) - Sterowanie programem przy pomocy enkodera
 
 Przygotuj program, który będzie pozwalał sterować świeceniem diody RGB. Program ma być wyposażony w przewijalne menu
 na ekranie wyświetlacza LCD (w kolejnych liniach wyświetlane są dwie pozycje z menu). Samodzielnie zaprojektuj strukturę
@@ -85,7 +85,7 @@ zgłaszanych przy zmianie stanu enkodera.
 
 ## L06
 
-### Zad 1 - Program wykorzystujący czujniki DS18B20
+### [Zad 1](L06_01/L06_01.ino) - Program wykorzystujący czujniki DS18B20
 
 Przygotuj program, który uczyni zestaw laboratoryjny małą „stacją pogodową”. Na wyświetlaczu LCD ma prezentować
 temperaturę wewnętrzną (czujnik wewnątrz zestawu) i zewnętrzną (sonda na przewodzie). Ponadto program powinien pa-
@@ -93,7 +93,7 @@ miętać wartość maksymalną i minimalną temperatury mierzonej przez sondę n
 sygnalizować czy jesteśmy w streﬁe komfortu temperaturowego, lub jest za gorąco, lub za zimno.
 Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
-### Zad 2 - Implementacja własnej biblioteki ze sterownikiem wybranego urządzenia
+### [Zad 2](L06_02/L06_02.ino) - Implementacja własnej biblioteki ze sterownikiem wybranego urządzenia
 
 Przygotuj własną bibliotekę, która będzie służyła do sterowania diodą RGB. Samodzielnie zaprojektuj interfejs programi-
 styczny tej biblioteki, tak aby pozwalał podać, do których pinów podłączona jest dioda, oraz aby pozwalał ustawiać kolory
