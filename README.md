@@ -2,19 +2,19 @@
 
 ## L02
 
-### [Zad 1](internet_rzeczy_arduino/blob/master/L01_01/L01_01.ino) - Konﬁguracja, odczyt i sterowanie pinami cyfrowymi
+### [Zad 1](L01_01/L01_01.ino) - Konﬁguracja, odczyt i sterowanie pinami cyfrowymi
 
 Przygotuj prosty programu wykorzystujący przełączniki przyciskane (zielony i czerwony) oraz diody świecące według wska-
 zówek Prowadzącego laboratorium. Przykładowy program: Po naciśnięciu przycisku zielonego zmień kolor świecącej diody.
 Przycisk czerwony włącza i wyłącza świecenie.
 
-### [Zad 2](internet_rzeczy_arduino/blob/master/L01_02/L01_02.ino) - Sterowanie jasnością świecenia diody z wykorzystaniem PWM
+### [Zad 2](L01_02/L01_02.ino) - Sterowanie jasnością świecenia diody z wykorzystaniem PWM
 
 Napisz program, który w reakcji na przyciski będzie rozjaśniał i ściemniał wybraną diodę. Na przykład, dioda zielona, po
 przytrzymaniu przycisku zielonego dioda będzie rozjaśniała się, a po przytrzymaniu czerwonego będzie ściemniana.
 Prowadzący laboratorium może zmodyﬁkować zadanie.
 
-### [Zad 3](internet_rzeczy_arduino/blob/master/L01_03/L01_03.ino) - Uzyskiwanie kolorów pośrednich w diodzie RGB
+### [Zad 3](L01_03/L01_03.ino) - Uzyskiwanie kolorów pośrednich w diodzie RGB
 
 Napisz program, który w sposób łagodny będzie zmieniał kolory diody RGB w cyklu, na przykład, czerwony > zielony >
 niebieski > czerwony ..., wyświetlając kolory pośrednie.
@@ -22,20 +22,20 @@ Prowadzący laboratorium może zmodyﬁkować zadanie.
 
 ## L03
 
-### Zad 1 - Program z eliminacją wpływy drgania styków
+### [Zad 1](L02_01/L02_01.ino) - Program z eliminacją wpływy drgania styków
 
 Napisz program, Program, po naciśnięciu i zwolnieniu jednego z przycisków (zielony i czerwony) ma zgasić zaświeconą diodę
 i zapalić kolejną dokładnie w cyklu R,G,B,R,G,... .
 Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
-### Zad 2 - Program wykonujący współbieżnie różne zadania
+### [Zad 2](L02_02/L02_02.ino) - Program wykonujący współbieżnie różne zadania
 
 Napisz program, który będzie zmieniał stany kolorowych diod w diodzie RGB co 0,9s czerwonej, 1,0s zielonej i 1,1s niebieskiej.
 Program przygotować tak, aby nie blokować przełączania diod wzajemnie, nie blokować wykonania programu. Program ma
 pozwalać na dodanie kolejnych zadań w funkcji loop() , które będą wykonywane bez znacznych opóźnień.
 Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
-### Zad 3 - Wykorzystanie wyświetlacza LCD - Program „Stoper elektroniczny”
+### [Zad 3](L02_03/L02_03.ino) - Wykorzystanie wyświetlacza LCD - Program „Stoper elektroniczny”
 
 Napisz program, który będzie działał jako stoper elektroniczny, podając czas na wyświetlaczu LCD. Klawisz zielony uruchamia
 i zatrzymuje stoper. Klawisz czerwony zatrzymuje stoper jeśli działał, i resetuje wartość czasu do wartości 0. Precyzja pomiaru
