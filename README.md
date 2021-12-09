@@ -74,7 +74,7 @@ Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić tre�
 
 ## L05
 
-### [Zad 1](L05_02/L05_02.ino) - Sterowanie programem przy pomocy enkodera
+### [Zad 1](L05_2/L05_2.ino) - Sterowanie programem przy pomocy enkodera
 
 Przygotuj program, który będzie pozwalał sterować świeceniem diody RGB. Program ma być wyposażony w przewijalne menu
 na ekranie wyświetlacza LCD (w kolejnych liniach wyświetlane są dwie pozycje z menu). Samodzielnie zaprojektuj strukturę
@@ -85,7 +85,7 @@ zgłaszanych przy zmianie stanu enkodera.
 
 ## L06
 
-### [Zad 1](L06_01/L06_01.ino) - Program wykorzystujący czujniki DS18B20
+### [Zad 1](L06_1/L06_1.ino) - Program wykorzystujący czujniki DS18B20
 
 Przygotuj program, który uczyni zestaw laboratoryjny małą „stacją pogodową”. Na wyświetlaczu LCD ma prezentować
 temperaturę wewnętrzną (czujnik wewnątrz zestawu) i zewnętrzną (sonda na przewodzie). Ponadto program powinien pa-
@@ -93,7 +93,7 @@ miętać wartość maksymalną i minimalną temperatury mierzonej przez sondę n
 sygnalizować czy jesteśmy w streﬁe komfortu temperaturowego, lub jest za gorąco, lub za zimno.
 Jest to zadanie przykładowe. Prowadzący może zmodyﬁkować lub zmienić treść zadania.
 
-### [Zad 2](L06_02/L06_02.ino) - Implementacja własnej biblioteki ze sterownikiem wybranego urządzenia
+### [Zad 2](L06_2/L06_2.ino) - Implementacja własnej biblioteki ze sterownikiem wybranego urządzenia
 
 Przygotuj własną bibliotekę, która będzie służyła do sterowania diodą RGB. Samodzielnie zaprojektuj interfejs programi-
 styczny tej biblioteki, tak aby pozwalał podać, do których pinów podłączona jest dioda, oraz aby pozwalał ustawiać kolory
