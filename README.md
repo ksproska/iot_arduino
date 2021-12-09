@@ -2,19 +2,19 @@
 
 ## L02
 
-### Zad 1 - Konﬁguracja, odczyt i sterowanie pinami cyfrowymi
+### [Zad 1](internet_rzeczy_arduino/blob/master/L01_01/L01_01.ino) - Konﬁguracja, odczyt i sterowanie pinami cyfrowymi
 
 Przygotuj prosty programu wykorzystujący przełączniki przyciskane (zielony i czerwony) oraz diody świecące według wska-
 zówek Prowadzącego laboratorium. Przykładowy program: Po naciśnięciu przycisku zielonego zmień kolor świecącej diody.
 Przycisk czerwony włącza i wyłącza świecenie.
 
-### Zad 2 - Sterowanie jasnością świecenia diody z wykorzystaniem PWM
+### [Zad 2](internet_rzeczy_arduino/blob/master/L01_02/L01_02.ino) - Sterowanie jasnością świecenia diody z wykorzystaniem PWM
 
 Napisz program, który w reakcji na przyciski będzie rozjaśniał i ściemniał wybraną diodę. Na przykład, dioda zielona, po
 przytrzymaniu przycisku zielonego dioda będzie rozjaśniała się, a po przytrzymaniu czerwonego będzie ściemniana.
 Prowadzący laboratorium może zmodyﬁkować zadanie.
 
-### Zad 3 - Uzyskiwanie kolorów pośrednich w diodzie RGB
+### [Zad 3](internet_rzeczy_arduino/blob/master/L01_03/L01_03.ino) - Uzyskiwanie kolorów pośrednich w diodzie RGB
 
 Napisz program, który w sposób łagodny będzie zmieniał kolory diody RGB w cyklu, na przykład, czerwony > zielony >
 niebieski > czerwony ..., wyświetlając kolory pośrednie.
